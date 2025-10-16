@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(0, 255, 247);
+}
+
+h1 {
+    color: firebrick;
+}
+
+p {
+    color: rgb(47, 113, 255);
+    border: 5px solid rgb(0, 255, 115);
+}
