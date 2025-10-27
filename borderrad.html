@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Border-Radius Example</title>
+<style>
+  .box {
+    width: 300px;
+    height: 150px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    border: 4px solid black;
+    text-align: center;
+    line-height: 150px;
+    font-weight: bold;
+    margin: 40px auto;
+    color: #333;
+  }
+
+  /* 🔹 Example showing all border-radius sub-properties */
+  .radius-example {
+    /* Shorthand property (all corners same) */
+    border-radius: 25px;
+
+    /* Individual corners */
+    border-top-left-radius: 50px;      /* top-left corner */
+    border-top-right-radius: 10px;     /* top-right corner */
+    border-bottom-right-radius: 40px;  /* bottom-right corner */
+    border-bottom-left-radius: 5px;    /* bottom-left corner */
+
+    /* Elliptical radius (horizontal / vertical) */
+    border-top-left-radius: 50px 20px;
+    border-top-right-radius: 30px 10px;
+    border-bottom-right-radius: 40px 25px;
+    border-bottom-left-radius: 15px 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="box radius-example">
+  Border Radius Example
+</div>
+
+</body>
+</html>
