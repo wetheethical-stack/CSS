@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Border Examples</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  padding: 20px;
+}
+
+h2 {
+  color: #222;
+  margin-top: 30px;
+}
+
+/* 1. Basic Border */
+.basic {
+  border-width: 3px;
+  border-style: solid;
+  border-color: red;
+  padding: 10px;
+  background: white;
+}
+
+/* 2. Shorthand Border */
+.shorthand {
+  border: 5px dashed blue;
+  padding: 10px;
+  background: white;
+}
+
+/* 3. Different Borders per Side */
+.sides {
+  border-top: 4px solid red;
+  border-right: 3px dotted green;
+  border-bottom: 5px double blue;
+  border-left: 2px dashed orange;
+  padding: 15px;
+  background: white;
+}
+
+/* 4. Border Width Options */
+.widths {
+  border-style: solid;
+  border-width: thin medium thick 10px; /* top, right, bottom, left */
+  border-color: purple;
+  padding: 10px;
+  background: white;
+}
+
+/* 5. All Border Styles */
+.borderbox {
+  border-width: 4px;
+  padding: 8px;
+  margin: 8px;
+  background: white;
+}
+#solid   { border-style: solid; border-color: black; }
+#dashed  { border-style: dashed; border-color: red; }
+#dotted  { border-style: dotted; border-color: blue; }
+#double  { border-style: double; border-color: green; }
+#groove  { border-style: groove; border-color: purple; }
+#ridge   { border-style: ridge; border-color: orange; }
+#inset   { border-style: inset; border-color: brown; }
+#outset  { border-style: outset; border-color: gray; }
+
+/* 6. RGB, HEX, RGBA Colors */
+.colorbox {
+  padding: 10px;
+  margin: 8px;
+  background: white;
+}
+.hex   { border: 3px solid #ff0000; }
+.rgb   { border: 3px solid rgb(0, 128, 0); }
+.rgba  { border: 3px solid rgba(0, 0, 255, 0.5); }
+
+/* 7. Animated Glowing Border */
+.glow {
+  border: 4px solid transparent;
+  border-image: linear-gradient(45deg, red, yellow, green, blue, violet) 1;
+  animation: glow 3s linear infinite;
+  padding: 12px;
+  text-align: center;
+  background: #fff;
+  margin-top: 15px;
+  border-radius: 100px; /* 👈 adds curve to the border */
+}
+
+@keyframes glow {
+  0% { border-image-source: linear-gradient(45deg, red, yellow, green, blue, violet); }
+  100% { border-image-source: linear-gradient(405deg, violet, blue, green, yellow, red); }
+}
+</style>
+</head>
+<body>
+
+<h1>All Border Examples in One File</h1>
+
+<h2>1️⃣ Basic Border</h2>
+<div class="basic">Solid red border (width + style + color)</div>
+
+<h2>2️⃣ Shorthand Border</h2>
+<div class="shorthand">border: 5px dashed blue;</div>
+
+<h2>3️⃣ Different Borders per Side</h2>
+<div class="sides">Different borders on each side</div>
+
+<h2>4️⃣ Border Width Options</h2>
+<div class="widths">Different border widths (thin, medium, thick, custom)</div>
+
+<h2>5️⃣ All Border Styles</h2>
+<div id="solid" class="borderbox">Solid</div>
+<div id="dashed" class="borderbox">Dashed</div>
+<div id="dotted" class="borderbox">Dotted</div>
+<div id="double" class="borderbox">Double</div>
+<div id="groove" class="borderbox">Groove</div>
+<div id="ridge" class="borderbox">Ridge</div>
+<div id="inset" class="borderbox">Inset</div>
+<div id="outset" class="borderbox">Outset</div>
+
+<h2>6️⃣ Border Colors (HEX, RGB, RGBA)</h2>
+<div class="colorbox hex">HEX Color Border (#ff0000)</div>
+<div class="colorbox rgb">RGB Color Border (rgb(0,128,0))</div>
+<div class="colorbox rgba">RGBA Color Border (rgba(0,0,255,0.5))</div>
+
+<h2>7️⃣ Animated Glowing Border 🌈</h2>
+<div class="glow">Animated Multicolor Border</div>
+
+</body>
+</html>
