@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Life Story - Pro Max</title>
+<style>
+body, html {margin:0; padding:0; font-family:'Poppins', sans-serif; background:#0a0a0a; color:#fff; overflow-x:hidden;}
+.container {width:90%; margin:0 auto; padding:50px 0;}
+.section {min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom:100px; position:relative; background:rgba(255,255,255,0.05); border-radius:20px; padding:50px; backdrop-filter:blur(10px);}
+.section h1 {font-size:3rem; margin-bottom:30px; background:linear-gradient(90deg,#ff416c,#ff4b2b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:gradient 5s linear infinite;}
+@keyframes gradient {0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
+.timeline {width:70%; display:flex; flex-direction:column; gap:40px; position:relative;}
+.timeline div {position:relative; opacity:0; transform:translateY(50px); transition:all 1s ease;}
+.timeline div.active {opacity:1; transform:translateY(0);}
+.timeline div::before {content:""; width:15px; height:15px; border-radius:50%; background:linear-gradient(45deg,#ff416c,#ff4b2b); position:absolute; left:-30px; top:0; animation:pulse 2s infinite;}
+@keyframes pulse {0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:0.6}}
+.btn {padding:15px 40px; border:none; border-radius:50px; background:linear-gradient(45deg,#ff416c,#ff4b2b); color:#000; font-weight:bold; cursor:pointer; transition:0.4s; margin-top:30px;}
+.btn:hover {transform:scale(1.1); box-shadow:0 0 30px #ff4b2b;}
+.modal {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; opacity:0; visibility:hidden; transition:0.5s; z-index:999;}
+.modal.active {opacity:1; visibility:visible;}
+.modal-content {background:#111; padding:40px; border-radius:25px; max-width:700px; text-align:center; animation:modalIn 0.8s forwards;}
+@keyframes modalIn {0%{transform:scale(0.5) rotateY(90deg); opacity:0}100%{transform:scale(1) rotateY(0deg); opacity:1}}
+.close-btn {padding:12px 30px; background:red; border:none; border-radius:20px; cursor:pointer; transition:0.3s; margin-top:20px;}
+.close-btn:hover {background:#ff4c4c; transform:scale(1.1);}
+.typewriter {border-right:3px solid #fff; white-space:nowrap; overflow:hidden; display:inline-block;}
+.floating {position:absolute; width:20px; height:20px; border-radius:50%; background:linear-gradient(45deg,#ff416c,#ff4b2b); pointer-events:none; animation:floaty 6s infinite;}
+@keyframes floaty {0%,100%{transform:translateY(0)}50%{transform:translateY(-50px) translateX(50px)}}
+</style>
+</head>
+<body>
+
+<!-- Particles -->
+<div class="floating" style="top:10%; left:20%; width:25px; height:25px;"></div>
+<div class="floating" style="top:50%; left:70%; width:20px; height:20px;"></div>
+<div class="floating" style="top:70%; left:40%; width:30px; height:30px;"></div>
+
+<div class="container">
+
+  <!-- Childhood -->
+  <div class="section" id="childhood">
+    <h1>Childhood</h1>
+    <div class="timeline">
+      <div><span class="typewriter" id="c1"></span></div>
+      <div><span class="typewriter" id="c2"></span></div>
+      <div><span class="typewriter" id="c3"></span></div>
+    </div>
+    <button class="btn" onclick="openModal('childhood')">Explore More</button>
+  </div>
+
+  <!-- Teenage -->
+  <div class="section" id="teenage">
+    <h1>Teenage</h1>
+    <div class="timeline">
+      <div><span class="typewriter" id="t1"></span></div>
+      <div><span class="typewriter" id="t2"></span></div>
+      <div><span class="typewriter" id="t3"></span></div>
+    </div>
+    <button class="btn" onclick="openModal('teenage')">Explore More</button>
+  </div>
+
+  <!-- College & Achievements -->
+  <div class="section" id="college">
+    <h1>College & Achievements</h1>
+    <div class="timeline">
+      <div><span class="typewriter" id="co1"></span></div>
+      <div><span class="typewriter" id="co2"></span></div>
+      <div><span class="typewriter" id="co3"></span></div>
+    </div>
+    <button class="btn" onclick="openModal('college')">Explore More</button>
+  </div>
+
+  <!-- Future Goals -->
+  <div class="section" id="future">
+    <h1>Future Goals</h1>
+    <div class="timeline">
+      <div><span class="typewriter" id="f1"></span></div>
+      <div><span class="typewriter" id="f2"></span></div>
+      <div><span class="typewriter" id="f3"></span></div>
+    </div>
+    <button class="btn" onclick="openModal('future')">Explore More</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <p id="modal-text"></p>
+    <button class="close-btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+// Typewriter function
+function typeWriter(id, text, speed=50){
+  let i=0;
+  function type(){ if(i<text.length){ document.getElementById(id).innerHTML+=text.charAt(i); i++; setTimeout(type, speed); } }
+  type();
+}
+
+// Childhood
+typeWriter("c1","Born into a loving and supportive family in India.",50);
+typeWriter("c2","Early curiosity about technology and gadgets.",50);
+typeWriter("c3","First experiences with basic programming and robotics.",50);
+
+// Teenage
+typeWriter("t1","Joined school robotics club, attended competitions.",50);
+typeWriter("t2","Learned teamwork, leadership, and problem-solving.",50);
+typeWriter("t3","Won first local-level robotics championship.",50);
+
+// College & Achievements
+typeWriter("co1","Co-founded Rattle Bots team with a fellow enthusiast.",50);
+typeWriter("co2","Participated in 20+ college and national robotics events.",50);
+typeWriter("co3","Won multiple awards, mentored juniors, and shared knowledge.",50);
+
+// Future Goals
+typeWriter("f1","Aim to advance AI and autonomous robotics.",50);
+typeWriter("f2","Focus on mentoring upcoming innovators.",50);
+typeWriter("f3","Contribute to technology for societal benefit.",50);
+
+// Scroll reveal timeline
+const timelines = document.querySelectorAll('.timeline div');
+window.addEventListener('scroll', () => {
+  timelines.forEach(t => {
+    const top = t.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50) t.classList.add('active');
+  });
+});
+
+// Modal logic
+const modal = document.getElementById('modal');
+const modalText = document.getElementById('modal-text');
+function openModal(section){
+  const content = {
+    childhood:"Childhood: Supportive family, early curiosity in technology, first programming experiments.",
+    teenage:"Teenage: Robotics competitions, first victories, teamwork and leadership development.",
+    college:"College: Co-founded robotics team, won multiple competitions, mentored juniors.",
+    future:"Future: Aim to advance AI & robotics, guide future innovators, contribute to society."
+  };
+  modalText.innerText = content[section];
+  modal.classList.add('active');
+}
+function closeModal(){ modal.classList.remove('active'); }
+
+// Particle movement on mouse
+document.addEventListener('mousemove', e => {
+  document.querySelectorAll('.floating').forEach(p => {
+    let speed = 0.05;
+    p.style.transform = `translate(${e.clientX*speed}px, ${e.clientY*speed}px)`;
+  });
+});
+</script>
+
+</body>
+</html>

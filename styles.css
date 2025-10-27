@@ -8,5 +8,10 @@ h1 {
 
 p {
     color: rgb(47, 113, 255);
-    border: 5px solid rgb(0, 255, 115);
+    border: 5px solid rgb(255, 0, 0);
+    font-size: x-large;
 }
+ .para2 {
+            color: green;
+            background-color: rgb(186, 210, 30);
+        }

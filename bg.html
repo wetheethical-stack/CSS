@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Image Size Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+
+            /* Background properties */
+            background-color: #f0f8ff;
+            background-image: url('https://cdn.racingnews365.com/2025/Hamilton/_1092x683_crop_center-center_85_none/Hamilton_2025-03-07-071000_uwsq.jpg?v=1741332158');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain; /* options: cover, contain, or width height like 300px 200px */
+            background-attachment: fixed;
+
+            min-height: 100vh; /* full viewport height */
+        }
+
+        .content {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: top;
+            font-size: 36px;
+            font-weight: bold;
+            color: #7af8f8;
+            text-shadow: 6px 6px 8px rgba(241, 5, 5, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">The dominant Rules</div>
+</body>
+</html>
